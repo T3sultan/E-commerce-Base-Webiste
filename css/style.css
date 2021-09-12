@@ -2,6 +2,11 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
+.headLineStyle{
+  color:blueviolet;
+  text-align: center;
+  font-weight: bold;
+}
 .search-field {
   border: none;
   border-radius: 50px;
@@ -23,7 +28,9 @@ body {
 .search-button {
   padding: 10px 50px;
   border-radius: 25px;
-  margin-left: 20px;
+  margin-left: 25px;
+  border-color: rgb(3, 118, 211);
+
 }
 #all-products {
   display: grid;

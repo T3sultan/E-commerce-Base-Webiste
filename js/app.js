@@ -1,5 +1,6 @@
 const loadProducts = () => {
-  const url = `https://fakestoreapi.com/products`;
+  //const url = `https://fakestoreapi.com/products`;
+  const url = `https://raw.githubusercontent.com/biswajitdasme/fakestore/main/db.json?fbclid=IwAR3r1sXK3RwmH1si5QyTf0vKTXQqeM_1zoWV0TJQZwsa9Izmka_8h72VHuE`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => showProducts(data));
@@ -20,6 +21,10 @@ const showProducts = (products) => {
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
+      <h5>Rate: ${product.rating.rate}</h5>
+      <h5>Count: ${product.rating.count}</h5>
+
+
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
       `;
@@ -29,34 +34,35 @@ const showProducts = (products) => {
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
-  updatePrice("price", price);
+  updatePrice("price", price)
 
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
+  updateTotal()
 };
 
 const getInputValue = (id) => {
-  const element = document.getElementById(id).innerText;
-  const converted = parseInt(element);
+  const element = document.getElementById(id).innerText
+  const converted = parseInt(element)
   return converted;
 };
 
 // main price update function
 const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
-  const convertPrice = parseFloat(value);
+  const convertPrice = parseFloat(value).toFixed(2)
   const total = convertedOldPrice + convertPrice;
-  document.getElementById(id).innerText = Math.round(total);
+  document.getElementById(id).innerText = Math.round(total).toFixed(2)
 };
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = Math.round(value);
+  document.getElementById(id).innerText = Math.round(value)
 };
 
 // update delivery charge and total Tax
 const updateTaxAndCharge = () => {
-  const priceConverted = getInputValue("price");
+  const priceConverted = getInputValue("price")
   if (priceConverted > 200) {
     setInnerText("delivery-charge", 30);
     setInnerText("total-tax", priceConverted * 0.2);
@@ -73,8 +79,6 @@ const updateTaxAndCharge = () => {
 
 //grandTotal update function
 const updateTotal = () => {
-  const grandTotal =
-    getInputValue("price") + getInputValue("delivery-charge") +
-    getInputValue("total-tax");
+  const grandTotal = getInputValue("price") + getInputValue("delivery-charge") + getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal;
 };
