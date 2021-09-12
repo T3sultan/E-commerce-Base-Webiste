@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ranga stores</title>
+  <title>E-commerce Base Webiste Debug</title>
   <link rel="stylesheet" href="./css/style.css" />
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -19,21 +19,29 @@
 
 <body>
   <header>
-    <h1 class="headLineStyle">E-commerce Base Webiste Debug</h1>
+    <!-- Webiste title  -->
+    <h1 class="headLineStyle">E-commerce Base Webiste Debug</h1> 
   </header>
+  <!-- main html -->
   <main class="main">
     <div class="search-field">
       <div class="search-box">
+        <!-- search  -->
         <input id="input-field" class="search-field" type="text" />
-        <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-          autocomplete="off" id="search-btn" onclick="loadProducts()">
+        <!-- search button -->
+        <!-- onclick funtion -->
+        <button type="button" class="btn search-button" data-toggle="button" aria-pressed="false"
+          autocomplete="off" id="search-btn" onclick="loadProducts()"> 
           Search
         </button>
       </div>
     </div>
+    <!-- main card -->
     <div class="row">
       <div class="col-md-9 col-lg-9 col-sm-7">
+        <!-- all all-products div -->
         <div id="all-products" class="">
+          <!-- new tag -->
 
         </div>
       </div>
@@ -41,6 +49,7 @@
         <div class="cart" id="my-cart">
           <table class="table">
             <thead>
+              <!-- main cart -->
               <h1>My-Cart</h1>
               <tr>
                 <th scope="col"></th>
@@ -51,30 +60,35 @@
             </thead>
             <tbody>
               <tr>
+                <!-- total products -->
                 <th>Total Added-Products:</th>
                 <td><span id="total-Products">0</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
+                <!-- price -->
                 <th>Price:</th>
                 <td>$ <span id="price">0</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
+                <!-- delivery-charge -->
                 <th>Delivery-Charge:</th>
                 <td>$ <span id="delivery-charge">20</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
+                <!-- tax -->
                 <th>Total-Tax:</th>
                 <td>$ <span id="total-tax">0</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
+                <!-- total -->
                 <th scope="row">Total</th>
                 <td colspan="2">$ <span id="total">0</span></td>
                 <td></td>
