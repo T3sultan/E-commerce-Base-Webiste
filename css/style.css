@@ -47,9 +47,10 @@ body {
   transition: 0.6s;
 }
 .single-product:hover {
-  box-shadow: 4px 4px 7px gray;
+  box-shadow: 4px 4px 7px rgb(155, 31, 126);
   border-radius: 10px;
-  border: 1px solid cyan;
+  border: 1px solid blueviolet;
+  border-color: blueviolet;
 }
 .product-image {
   width: 150px;
